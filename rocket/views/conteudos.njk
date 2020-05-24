@@ -1,0 +1,49 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>CONTEUDOS - ROCKETSEAT</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="icon" href="https://raw.githubusercontent.com/Rocketseat/bootcamp-launchbase-desafios-02/master/desafios/favicon.ico" type="image/x-icon" />
+{% endblock %}
+
+{% block content %}
+
+
+
+
+        <div class="wrapper">
+            <h1>Conteúdos</h1>
+        </div>
+
+        <section class="cards">
+
+            <!--Card-->
+
+            {% for item in items %}
+            <div class="card" id="{{ item.id }}">
+
+                <div class="card_image-container">
+                    <img src="https://skylab.rocketseat.com.br/static/{{item.image}}.svg" alt="Imagem de {{ item.title }}">
+                </div>
+
+                <div class="card_content">
+                    <p>{{ item.title }}</p>
+                </div>
+
+                <div class="card_info">
+                    <p>{{ item.modulos }}</p>
+                    <p class="card_price">{{ item.price }}</p>
+                </div>
+
+            </div>
+            {% endfor %}
+
+
+        </section>
+
+
+
+        <script src="scripts.js"></script>
+
+{% endblock %}
