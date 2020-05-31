@@ -60,3 +60,81 @@ header {
     width: 100%;
     transition: width 600ms ease-in-out;
 }
+
+.card {
+    background-color: #8FBC8F;
+    width: 800px;
+    min-height: 400px;
+
+    /* >>>> IMAGE CENTER <<<< */
+    margin: 45px auto;
+
+    /* >>>> DISPLAY <<<< */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    /* >>>> SOMBRA <<<< */
+    box-shadow: 0px 3px 6px -2px rgba(0, 0, 0, 0.4);
+
+    /* >>>> ANIMAÇÂO <<<< */
+    animation-name: up;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+
+/* >>>> DETAILS <<<< */
+
+.details {
+    padding: 30px;
+    margin-left: 50px;
+}
+
+.details .item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.details .item:last-child {
+    border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+    font-size: 16px;
+    line-height: 26px;
+    color: black;
+    letter-spacing: 0.7px;
+    font-weight: normal;
+}
+
+.details .item div:nth-child(2) {
+    color: #555;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+}
+
+.details .item div:nth-child(2) span {
+    padding: 8px 16px;
+    background-color: #7CFC00;
+    border-radius: 16px;
+    color: black;
+    margin-right: 4px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+}
