@@ -1,5 +1,6 @@
 const express = require('express')
 const routes = express.Router()
+const instructors = require('./instructors')
 
 routes.get('/', function(req, res) {
     return res.redirect("/instructors")
@@ -13,22 +14,16 @@ routes.get('/instructors/create', function(req, res) {
     return res.render("instructors/create")
 })
 
-routes.post('/instructors', function(req, res) {
+routes.get('/instructors/:id', instructors.show)
 
-    const keys = Object.keys(req.body)
-    // VERIFICAR SE ALGUMA CHAVE ESTÁ VAZIA, SE ESTIVER RETORNA MENSAGEM
-    for (key of keys) {
-        if (req.body[key] == "") {
-            return res.send("Please, fill all fields")
-        }
-    }
-
-    return res.send(keys)
+routes.get('/instructors/:id/edit', function(req, res) {
+    return res.render("instructors/edit")
 })
+
+routes.post('/instructors', instructors.post)
 
 routes.get('/members', function(req, res) {
     return res.send("members")
 })
-
 
 module.exports = routes
