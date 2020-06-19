@@ -143,12 +143,15 @@ header {
 
 /* >>>> FORM <<<< */
 
-input {
+input, select {
     width: 100%;
     outline: none;
     color: #555;
     font-weight: bold;
     font-size: 18px;
+    border-style: solid;
+    border-color: rgb(197, 197, 197);
+    border-width: 1px;
 }
 
 input[type="radio"] {
